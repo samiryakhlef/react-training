@@ -1,0 +1,15 @@
+*,::after, ::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+nav a{
+  margin: 10px;
+  font-size: 18px;
+}
+nav{
+  margin: 10px 0;
+}
+.activeLink{
+  background: lightblue;
+}
