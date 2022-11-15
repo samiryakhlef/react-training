@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+//import de create store
+import { createStore } from 'redux'
+
+//import du provider
+import { Provider } from "react-redux"
+
+//import du fichier counterReducer
+import CounterReducer from './Reducers/CounterReducer';
+
+//on créer notre store et on lui passe le reducer
+const Store = createStore(CounterReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  //on passe notre const = Store en props
+  <Provider store={Store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
